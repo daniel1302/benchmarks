@@ -1,0 +1,11 @@
+#ifndef ELECTRICAL_CIRCUIT_SIMULATOR_MATRIX_H
+#define ELECTRICAL_CIRCUIT_SIMULATOR_MATRIX_H
+
+
+class Matrix {
+public:
+    Matrix(void);
+};
+
+
+#endif //ELECTRICAL_CIRCUIT_SIMULATOR_MATRIX_H
