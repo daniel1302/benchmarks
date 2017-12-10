@@ -19,6 +19,17 @@ public:
     ~Matrix();
     void insert(uint32_t x, uint32_t y, T value);
     string print();
+    int cols();
+    int rows();
+
+public:
+//    Matrix<T> operator*(const double multiplier);
+    Matrix<T> operator*=(const Matrix<T> matrix);
+    Matrix<T> operator*=(const double multiplier);
+    Matrix<T> operator*=(const int multiplier);
+
+protected:
+    void multiply(double multiplier);
 };
 
 
@@ -31,6 +42,22 @@ Matrix<T>::Matrix()
 template <typename T>
 Matrix<T>::~Matrix()
 {
+}
+
+template <typename T>
+int Matrix<T>::cols()
+{
+    if (_matrix.size() > 0) {
+        return _matrix[0].size();
+    }
+
+    return 0;
+}
+
+template <typename T>
+int Matrix<T>::rows()
+{
+    return _matrix.size();
 }
 
 template <typename T>
@@ -55,7 +82,6 @@ void Matrix<T>::insert(uint32_t row, uint32_t col, T value)
     _matrix[row][col] = value;
 }
 
-
 template <typename T>
 string Matrix<T>::print()
 {
@@ -75,6 +101,38 @@ string Matrix<T>::print()
     return out.str();
 }
 
+template <typename T>
+Matrix<T> Matrix<T>::operator*(const double multiplier)
+{
+    this->multiply(multiplier);
 
+    return Matrix<T>(*this);
+}
+
+template <typename T>
+Matrix<T> Matrix<T>::operator*=(const int multiplier)
+{
+    this->multiply((double)multiplier);
+
+    return Matrix<T>(*this);
+}
+
+template <typename T>
+Matrix<T> Matrix<T>::operator*=(const double multiplier)
+{
+    this->multiply(multiplier);
+
+    return Matrix<T>(*this);
+}
+
+template <typename T>
+void Matrix<T>::multiply(double multiplier)
+{
+    for (uint32_t row=0; row<_matrix.size(); row++) {
+        for(uint32_t col=0; col<_matrix[row].size(); col++) {
+            _matrix[row][col] = _matrix[row][col] * multiplier;
+        }
+    }
+}
 
 #endif //ELECTRICAL_CIRCUIT_SIMULATOR_MATRIX_H
