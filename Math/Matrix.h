@@ -131,10 +131,8 @@ Matrix<T> Matrix<T>::operator*=(const Matrix<T> matrix)
 
             tmpValue = 0;
 
-            for (uint32_t row2=0; row2<matrix.rows(); row2++) {
-                for (uint32_t col1=0; col1<cols; col1++) {
-                    tmpValue += tmpData[row1][col1] * matrix.get(row2, col2);
-                }
+            for (uint32_t cord=0; cord<matrix.rows(); cord++) {
+                    tmpValue += tmpData[row1][cord] * matrix.get(cord, col2);
             }
 
             this->insert(row1, col2, tmpValue);
