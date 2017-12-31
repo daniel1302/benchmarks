@@ -2,8 +2,12 @@
 #define ELECTRICAL_CIRCUIT_SIMULATOR_POWERSUPPLY_H
 
 
-class PowerSupply {
+#include "Element.h"
 
+class PowerSupply : Element {
+public:
+    PowerSupply(uint32_t n1, uint32_t n2, double val);
+    void modifyCircuit(Circuit *circuit);
 };
 
 

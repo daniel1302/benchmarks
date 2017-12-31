@@ -24,7 +24,7 @@ protected:
 public:
     void insertElement(Element *element);
     void modifyG(uint32_t row, uint32_t col, double val);
-    void modifyI(uint32_t row, uint32_t col, double val);
+    void modifyI(uint32_t row, double val);
 };
 
 
