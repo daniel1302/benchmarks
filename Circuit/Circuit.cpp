@@ -26,3 +26,17 @@ void Circuit::modifyMatrix(
     val = val + matrix->get(row, col);
     matrix->insert(row, col, val);
 }
+
+std::string Circuit::print()
+{
+    stringstream out;
+    out
+            << "Conductance matrix: "<<endl
+            <<this->g.print()<<endl
+            << "Current matrix:"<<endl
+            <<this->i.print()<<endl;
+
+
+
+    return out.str();
+}
