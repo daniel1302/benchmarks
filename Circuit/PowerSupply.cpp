@@ -14,5 +14,5 @@ void PowerSupply::modifyCircuit(Circuit *circuit)
     circuit->modifyG(this->node2, this->node2, 0);
 
     circuit->modifyI(this->node1, (-1.) * this->value);
-    circuit->modifyI(this->node1, this->value);
+    circuit->modifyI(this->node2, this->value);
 }
