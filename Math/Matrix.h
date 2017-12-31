@@ -94,7 +94,7 @@ string Matrix<T>::print() const
         out << "[";
         for(uint32_t col=0; col<_matrix[row].size(); col++) {
             out
-                    << setw(9)
+                    << setw(11)
                     << setprecision(4)
                     << _matrix[row][col];
         }
