@@ -143,7 +143,7 @@ Matrix<T> Matrix<T>::operator*=(const Matrix<T> matrix)
 template <typename T>
 T Matrix<T>::get(uint32_t row, uint32_t col) const
 {
-    if (_matrix.size() >= row && _matrix[row].size() >= col) {
+    if (_matrix.size() > row && _matrix[row].size() > col) {
         return _matrix[row][col];
     }
 
