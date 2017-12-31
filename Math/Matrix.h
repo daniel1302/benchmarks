@@ -117,8 +117,6 @@ Matrix<T> Matrix<T>::operator*=(const Matrix<T> matrix)
 {
     vector< vector<T> > tmpData(_matrix);
     uint32_t rows = this->rows();
-    uint32_t cols = this->cols();
-
 
     if (this->cols() != matrix.rows() || this->rows() != matrix.cols()) {
         throw logic_error("Cannot multiply matrixes with different sizes");
@@ -145,7 +143,11 @@ Matrix<T> Matrix<T>::operator*=(const Matrix<T> matrix)
 template <typename T>
 T Matrix<T>::get(uint32_t row, uint32_t col) const
 {
-    return _matrix[row][col];
+    if (_matrix.size() >= row && _matrix[row].size() >= col) {
+        return _matrix[row][col];
+    }
+
+    return 0;
 }
 
 
