@@ -3,10 +3,13 @@
 
 #include "Element.h"
 
-class ResistorElement : Element {
+class ResistorElement : public Element {
+protected:
+    double conductance;
+
 public:
     ResistorElement(uint32_t n1, uint32_t n2, double val);
-    void modifyCircuit(Circuit circuit);
+    void modifyCircuit(Circuit *circuit);
 };
 
 
