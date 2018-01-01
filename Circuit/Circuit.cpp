@@ -51,9 +51,6 @@ std::string Circuit::print()
 
 void Circuit::calculate(Matrix<double> *matrix)
 {
-    this->g *= 10000;
-    this->i *= 10000;
-
     GaussianElimination<double> gaussianElimination(&this->g, &this->i);
     gaussianElimination.reduce();
 
