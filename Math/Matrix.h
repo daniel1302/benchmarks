@@ -20,6 +20,8 @@ public:
     Matrix();
     ~Matrix();
     void insert(uint32_t row, uint32_t col, T value);
+    void removeRow(uint32_t row);
+    void removeCol(uint32_t col);
     string print() const;
     uint32_t cols() const;
     uint32_t rows() const;
@@ -83,6 +85,21 @@ void Matrix<T>::insert(uint32_t row, uint32_t col, T value)
     }
 
     _matrix[row][col] = value;
+}
+
+template <typename T>
+void Matrix<T>::removeRow(uint32_t row)
+{
+    this->_matrix.erase(this->_matrix.begin()+row);
+}
+
+template <typename T>
+void Matrix<T>::removeCol(uint32_t col)
+{
+    for (uint32_t i=0; i<this->_matrix.size(); i++)
+    {
+        this->_matrix[i].erase(this->_matrix[i].begin()+col);
+    }
 }
 
 template <typename T>

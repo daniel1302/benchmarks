@@ -55,6 +55,8 @@ void matrixTest()
 
     *matrix *= *matrix2;
 
+//    matrix->removeRow(2);
+    matrix->removeCol(0);
     std::cout << "Multiplication"
               <<"Matrix [" <<matrix->rows() << " x " << matrix->cols() << "]" << std::endl
               <<matrix->print()<<endl;
