@@ -1,6 +1,7 @@
 #include <iostream>
 #include <memory>
 #include <Math/Matrix.h>
+#include <Math/GaussianElimination.h>
 
 #ifndef TEST_MATRIX_TEST
 #define TEST_MATRIX_TEST
@@ -55,11 +56,13 @@ void matrixTest()
 
     *matrix *= *matrix2;
 
-//    matrix->removeRow(2);
-    matrix->removeCol(0);
+////    matrix->removeRow(2);
+//    matrix->removeCol(0);
     std::cout << "Multiplication"
               <<"Matrix [" <<matrix->rows() << " x " << matrix->cols() << "]" << std::endl
               <<matrix->print()<<endl;
+
+
 
     std::cout<<matrix->get(2, 2)<<endl;
     std::cout<<matrix->get(3, 2)<<endl;

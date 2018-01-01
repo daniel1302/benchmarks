@@ -5,6 +5,7 @@
 
 #ifdef TEST
     #include <Tests/Matrix.cpp>
+    #include <Tests/GaussianElimination.cpp>
 #include <Circuit/PowerSupply.h>
 #include <Circuit/ResistorElement.h>
 
@@ -27,7 +28,7 @@ void testCircuit()
     circuit.insertElement((Element*)&r2);
     circuit.insertElement((Element*)&r3);
     circuit.insertElement((Element*)&r4);
-
+    circuit.ground(0);
 
 
 
@@ -36,7 +37,8 @@ void testCircuit()
 
 int main() {
 //    matrixTest();
-    testCircuit();
+    gaussianEliminationTest();
+//    testCircuit();
 
     return 0;
 }
