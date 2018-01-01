@@ -20,16 +20,24 @@ void gaussianEliminationTest()
     matrix3->insert(2, 1, 0.625);
     matrix3->insert(2, 2, 3.125);
 
+    auto freeMatrix = new Matrix<double>();
+
+    freeMatrix->insert(0, 0, 10);
+    freeMatrix->insert(1, 0, 0);
+    freeMatrix->insert(2, 0, 0);
+
     std::cout << "Before reduction"
               <<"Matrix [" <<matrix3->rows() << " x " << matrix3->cols() << "]" << std::endl
-              <<matrix3->print()<<endl;
+              <<matrix3->print()<<endl
+              <<freeMatrix->print()<<endl;
 
     GaussianElimination<double> gaussianElimination;
-    gaussianElimination.reduce(matrix3);
+    gaussianElimination.reduce(matrix3, freeMatrix);
 
     std::cout << "After reduction"
               <<"Matrix [" <<matrix3->rows() << " x " << matrix3->cols() << "]" << std::endl
-              <<matrix3->print()<<endl;
+              <<matrix3->print()<<endl
+              <<freeMatrix->print()<<endl;
 
 }
 
