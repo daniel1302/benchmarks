@@ -31,8 +31,8 @@ void gaussianEliminationTest()
               <<matrix3->print()<<endl
               <<freeMatrix->print()<<endl;
 
-    GaussianElimination<double> gaussianElimination;
-    gaussianElimination.reduce(matrix3, freeMatrix);
+    GaussianElimination<double> gaussianElimination(matrix3, freeMatrix);
+    gaussianElimination.reduce();
 
     std::cout << "After reduction"
               <<"Matrix [" <<matrix3->rows() << " x " << matrix3->cols() << "]" << std::endl
