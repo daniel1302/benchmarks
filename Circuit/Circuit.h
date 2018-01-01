@@ -26,6 +26,7 @@ public:
     void modifyG(uint32_t row, uint32_t col, double val);
     void modifyI(uint32_t row, double val);
     void ground(uint32_t node);
+    void calculate(Matrix<double> *matrix);
     std::string print();
 };
 

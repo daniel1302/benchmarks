@@ -1,3 +1,4 @@
+#include <Math/GaussianElimination.h>
 #include "Circuit.h"
 
 
@@ -46,4 +47,15 @@ std::string Circuit::print()
 
 
     return out.str();
+}
+
+void Circuit::calculate(Matrix<double> *matrix)
+{
+    this->g *= 10000;
+    this->i *= 10000;
+
+    GaussianElimination<double> gaussianElimination(&this->g, &this->i);
+    gaussianElimination.reduce();
+
+    gaussianElimination.calculate(matrix);
 }
