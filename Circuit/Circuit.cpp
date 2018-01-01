@@ -27,6 +27,13 @@ void Circuit::modifyMatrix(
     matrix->insert(row, col, val);
 }
 
+void Circuit::ground(uint32_t node)
+{
+    this->i.removeRow(node);
+    this->g.removeCol(node);
+    this->g.removeRow(node);
+}
+
 std::string Circuit::print()
 {
     stringstream out;
