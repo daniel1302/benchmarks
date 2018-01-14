@@ -1,7 +1,7 @@
 #include <iostream>
 #include <memory>
-#include <Math/Matrix.h>
-#include <Math/GaussianElimination.h>
+#include <Model/Math/Matrix.h>
+#include <Model/Math/GaussianElimination.h>
 
 #ifndef TEST_MATRIX_TEST
 #define TEST_MATRIX_TEST

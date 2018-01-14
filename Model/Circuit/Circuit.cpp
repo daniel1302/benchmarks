@@ -1,4 +1,4 @@
-#include <Math/GaussianElimination.h>
+#include <Model/Math/GaussianElimination.h>
 #include "Circuit.h"
 
 

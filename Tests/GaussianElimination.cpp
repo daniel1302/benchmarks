@@ -1,6 +1,6 @@
 #include <iostream>
-#include <Math/Matrix.h>
-#include <Math/GaussianElimination.h>
+#include <Model/Math/Matrix.h>
+#include <Model/Math/GaussianElimination.h>
 
 
 #ifndef TEST_GAUSSIAN_ELIMINATION

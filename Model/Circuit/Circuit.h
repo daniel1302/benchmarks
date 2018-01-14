@@ -6,8 +6,8 @@
 #define ELECTRICAL_CIRCUIT_SIMULATOR_CIRCUIT_H
 
 
-#include <Math/Matrix.h>
-#include <Circuit/Element.h>
+#include <Model/Math/Matrix.h>
+#include <Model/Circuit/Element.h>
 
 class Element;
 
